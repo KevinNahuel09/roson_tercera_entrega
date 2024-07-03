@@ -3,7 +3,6 @@ from .models import *
 
 from .forms import *
 
-# Copyright Norman Beltran
 
 def home(request):
     return render(request, "entidades/index.html")
@@ -20,9 +19,10 @@ def estudiantes(request):
     contexto = {"estudiantes": Estudiante.objects.all()}
     return render(request, "entidades/estudiantes.html", contexto)
 
-def entregables(request):
-    contexto = {"entregables": Entregable.objects.all()}
-    return render(request, "entidades/entregables.html", contexto)
+def entregables (request):
+    contexto = {"entregables": entregables.objects.all()}
+    return render (request, "entidades/entregables.html", contexto)
+
 
 def acerca(request):
     return render(request, "entidades/acerca.html")
